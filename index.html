@@ -1,59 +1,253 @@
-<!-- Portfolio Cocktails Section -->
-<section id="portfolio" class="features">
-  <div class="section-header">
-    <div>Портфолио</div>
-    <h2 class="section-title">Мои лучшие коктейли</h2>
-    <p>Ниже представлены коктейли, разработанные мною для разных мероприятий и баров.</p>
-  </div>
-  <div class="features-grid">
-    <div class="feature-card cocktail-card">
-      <img src="images/cocktail1.jpg" alt="Moscow Mule" style="width:100%; border-radius:12px;">
-      <div class="cocktail-info">
-        <h3>Moscow Mule</h3>
-        <p>Классический коктейль с водкой, имбирным элем и лаймом.</p>
-      </div>
-    </div>
-    <div class="feature-card cocktail-card">
-      <img src="images/cocktail2.jpg" alt="Negroni" style="width:100%; border-radius:12px;">
-      <div class="cocktail-info">
-        <h3>Negroni</h3>
-        <p>Итальянский аперитив с джином, кампари и сладким вермутом.</p>
-      </div>
-    </div>
-    <div class="feature-card cocktail-card">
-      <img src="images/cocktail3.jpg" alt="Mojito" style="width:100%; border-radius:12px;">
-      <div class="cocktail-info">
-        <h3>Mojito</h3>
-        <p>Освежающий мятный коктейль с ромом, лаймом и содовой.</p>
-      </div>
-    </div>
-    <div class="feature-card cocktail-card">
-      <img src="images/cocktail4.jpg" alt="Whiskey Sour" style="width:100%; border-radius:12px;">
-      <div class="cocktail-info">
-        <h3>Whiskey Sour</h3>
-        <p>Классика с виски, лимонным соком и сахарным сиропом.</p>
-      </div>
-    </div>
-  </div>
-</section>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Иван Петров | Бар-менеджер</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {font-family: 'Space Grotesk', sans-serif; margin:0; scroll-behavior: smooth; background:#f8f8f8;}
+    nav {background:#222; color:#fff; display:flex; justify-content:space-between; align-items:center; padding:1rem;}
+    nav a.logo {color:#fff; text-decoration:none; font-weight:700; display:flex; align-items:center; gap:0.5rem;}
+    nav ul {display:flex; gap:1rem; list-style:none; margin:0;}
+    nav ul li a {color:#fff; text-decoration:none;}
+    nav .nav-cta {background:#ff6b6b; padding:0.5rem 1rem; border-radius:8px; text-decoration:none; color:#fff;}
+    .hero {display:flex; flex-wrap:wrap; justify-content:center; align-items:center; padding:4rem 2rem; background:#ffe;}
+    .hero h1 {font-size:2.5rem; margin:0;}
+    .hero h2 {font-size:1.5rem; margin:0.5rem 0;}
+    .hero-description {margin-top:1rem; max-width:600px;}
+    .btn-primary, .btn-secondary {text-decoration:none; padding:0.7rem 1.5rem; border-radius:8px; margin:0.5rem; display:inline-block;}
+    .btn-primary {background:#ff6b6b; color:#fff;}
+    .btn-secondary {background:#fff; color:#ff6b6b; border:2px solid #ff6b6b;}
+    section {padding:4rem 2rem;}
+    .section-header {text-align:center; margin-bottom:2rem;}
+    .section-title {font-size:2rem; margin:0.5rem 0;}
+    .features-grid, .pricing-grid, .testimonials-grid {display:grid; gap:1.5rem; grid-template-columns:repeat(auto-fit,minmax(250px,1fr));}
+    .feature-card, .pricing-card, .testimonial-card {background:#fff; padding:1.5rem; border-radius:16px; box-shadow:0 4px 12px rgba(0,0,0,0.05); opacity:0; transform:translateY(40px); transition:0.6s;}
+    .feature-card.visible, .pricing-card.visible, .testimonial-card.visible {opacity:1; transform:translateY(0);}
+    /* Навыки с прогресс-барами */
+    .skill {margin-bottom:1rem;}
+    .skill-name {font-weight:600; margin-bottom:0.3rem;}
+    .skill-bar {background:#ddd; border-radius:8px; overflow:hidden; height:16px;}
+    .skill-progress {background:#ff6b6b; height:100%; width:0%; transition:1.2s;}
+    footer {background:#222; color:#fff; padding:2rem;}
+    footer a {color:#ff6b6b; text-decoration:none;}
+    @media(max-width:768px){.hero {flex-direction:column; text-align:center;}}
+    /* Cocktail hover effect */
+    .cocktail-card {position:relative; overflow:hidden;}
+    .cocktail-info {position:absolute; bottom:0; left:0; right:0; background:rgba(0,0,0,0.7); color:#fff; padding:1rem; opacity:0; transform:translateY(100%); transition:0.4s;}
+    .cocktail-card:hover .cocktail-info {opacity:1; transform:translateY(0);}
+  </style>
+</head>
+<body>
 
-<style>
-  /* Cocktail hover effect */
-  .cocktail-card {position:relative; overflow:hidden;}
-  .cocktail-info {position:absolute; bottom:0; left:0; right:0; background:rgba(0,0,0,0.7); color:#fff; padding:1rem; opacity:0; transform:translateY(100%); transition:0.4s;}
-  .cocktail-card:hover .cocktail-info {opacity:1; transform:translateY(0);}
-</style>
+  <!-- Navigation -->
+  <nav>
+    <a href="#" class="logo">🍸 Иван Петров</a>
+    <ul>
+      <li><a href="#about">Обо мне</a></li>
+      <li><a href="#experience">Опыт</a></li>
+      <li><a href="#skills">Навыки</a></li>
+      <li><a href="#portfolio">Портфолио</a></li>
+      <li><a href="#testimonials">Отзывы</a></li>
+      <li><a href="#contact">Контакты</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">Связаться</a>
+  </nav>
 
-<script>
-  // Добавляем анимацию появления карточек портфолио
-  const portfolioCards = document.querySelectorAll('.cocktail-card');
-  function animatePortfolio() {
-    const triggerBottom = window.innerHeight * 0.85;
-    portfolioCards.forEach(card => {
-      const cardTop = card.getBoundingClientRect().top;
-      if(cardTop < triggerBottom) card.classList.add('visible');
-    });
-  }
-  window.addEventListener('scroll', animatePortfolio);
-  window.addEventListener('load', animatePortfolio);
-</script>
+  <!-- Hero -->
+  <section class="hero">
+    <div>
+      <h1>Иван Петров</h1>
+      <h2>Профессиональный <span style="color:#ff6b6b;">бар-менеджер</span> с 10+ лет опыта</h2>
+      <p class="hero-description">
+        Управление баром, обучение персонала, организация мероприятий, контроль качества напитков и обслуживание гостей на высшем уровне.
+      </p>
+      <a href="#experience" class="btn-primary">Мой опыт</a>
+      <a href="#contact" class="btn-secondary">Связаться со мной</a>
+    </div>
+    <div>
+      <img src="images/bar-manager-hero.jpg" alt="Бар-менеджер Иван Петров" style="border-radius:16px; max-width:100%;">
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <div class="section-header">
+      <div>Обо мне</div>
+      <h2 class="section-title">Профессиональный профиль</h2>
+      <p>Я специализируюсь на управлении барами, создании уникальных коктейльных концепций, обучении персонала и обеспечении высокого уровня обслуживания клиентов.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card">Образование: Диплом бар-менеджера, Академия гостиничного бизнеса, 2014</div>
+      <div class="feature-card">Личные качества: Коммуникабельность, лидерство, стрессоустойчивость, внимание к деталям</div>
+      <div class="feature-card">Цели: Развитие инновационного бара, обучение персонала, увеличение дохода и клиентской лояльности</div>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section id="experience">
+    <div class="section-header">
+      <div>Опыт</div>
+      <h2 class="section-title">Мой профессиональный путь</h2>
+      <p>Опыт работы в престижных барах и ресторанах с высокой посещаемостью, управление командами до 15 человек.</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <h3>Главный бар-менеджер</h3>
+        <p>Sky Lounge, Москва | 2020 – наст. время</p>
+        <ul>
+          <li>Управление баром на 120 мест</li>
+          <li>Обучение и мотивация персонала</li>
+          <li>Разработка коктейльных меню</li>
+        </ul>
+      </div>
+      <div class="pricing-card">
+        <h3>Бар-менеджер</h3>
+        <p>Rooftop Bar, Санкт-Петербург | 2016 – 2020</p>
+        <ul>
+          <li>Организация мероприятий</li>
+          <li>Оптимизация закупок</li>
+          <li>Внедрение стандартов обслуживания</li>
+        </ul>
+      </div>
+      <div class="pricing-card">
+        <h3>Старший бармен</h3>
+        <p>Gourmet Bar, Москва | 2014 – 2016</p>
+        <ul>
+          <li>Приготовление коктейлей премиум класса</li>
+          <li>Обучение младших барменов</li>
+          <li>Участие в конкурсах</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills">
+    <div class="section-header">
+      <div>Навыки</div>
+      <h2 class="section-title">Профессиональные компетенции</h2>
+    </div>
+    <div>
+      <div class="skill">
+        <div class="skill-name">Миксология</div>
+        <div class="skill-bar"><div class="skill-progress" data-progress="95%"></div></div>
+      </div>
+      <div class="skill">
+        <div class="skill-name">Управление командой</div>
+        <div class="skill-bar"><div class="skill-progress" data-progress="90%"></div></div>
+      </div>
+      <div class="skill">
+        <div class="skill-name">Обслуживание клиентов</div>
+        <div class="skill-bar"><div class="skill-progress" data-progress="92%"></div></div>
+      </div>
+      <div class="skill">
+        <div class="skill-name">Организация мероприятий</div>
+        <div class="skill-bar"><div class="skill-progress" data-progress="88%"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Cocktails -->
+  <section id="portfolio">
+    <div class="section-header">
+      <div>Портфолио</div>
+      <h2 class="section-title">Мои лучшие коктейли</h2>
+      <p>Ниже представлены коктейли, разработанные мною для разных мероприятий и баров.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card cocktail-card">
+        <img src="images/cocktail1.jpg" alt="Moscow Mule" style="width:100%; border-radius:12px;">
+        <div class="cocktail-info">
+          <h3>Moscow Mule</h3>
+          <p>Классический коктейль с водкой, имбирным элем и лаймом.</p>
+        </div>
+      </div>
+      <div class="feature-card cocktail-card">
+        <img src="images/cocktail2.jpg" alt="Negroni" style="width:100%; border-radius:12px;">
+        <div class="cocktail-info">
+          <h3>Negroni</h3>
+          <p>Итальянский аперитив с джином, кампари и сладким вермутом.</p>
+        </div>
+      </div>
+      <div class="feature-card cocktail-card">
+        <img src="images/cocktail3.jpg" alt="Mojito" style="width:100%; border-radius:12px;">
+        <div class="cocktail-info">
+          <h3>Mojito</h3>
+          <p>Освежающий мятный коктейль с ромом, лаймом и содовой.</p>
+        </div>
+      </div>
+      <div class="feature-card cocktail-card">
+        <img src="images/cocktail4.jpg" alt="Whiskey Sour" style="width:100%; border-radius:12px;">
+        <div class="cocktail-info">
+          <h3>Whiskey Sour</h3>
+          <p>Классика с виски, лимонным соком и сахарным сиропом.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials">
+    <div class="section-header">
+      <div>Отзывы</div>
+      <h2 class="section-title">Что о мне говорят коллеги</h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <p>"Иван профессионал с большой буквы. Отличный организатор и настоящий лидер команды."</p>
+        <strong>Анна Смирнова, Sky Lounge</strong>
+      </div>
+      <div class="testimonial-card">
+        <p>"Его коктейльные меню всегда удивляют гостей. Клиенты возвращаются снова и снова."</p>
+        <strong>Павел Иванов, Rooftop Bar</strong>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="cta">
+    <div class="section-header">
+      <h2>Связаться со мной</h2>
+      <p>Email: <a href="mailto:ivan.petrov@example.com">ivan.petrov@example.com</a><br>
+         Телефон: <a href="tel:+79991234567">+7 999 123 45 67</a><br>
+         LinkedIn: <a href="https://www.linkedin.com/in/ivan-petrov/" target="_blank">ivan-petrov</a>
+      </p>
+    </div>
+    <a href="mailto:ivan.petrov@example.com" class="btn-primary">Отправить сообщение →</a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <p>© 2026 Иван Петров. Все права защищены.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Прогресс-бары навыков
+    const skills = document.querySelectorAll('.skill-progress');
+    function animateSkills() {
+      skills.forEach(skill => {
+        const value = skill.getAttribute('data-progress');
+        skill.style.width = value;
+      });
+    }
+    // Анимация появления карточек
+    const cards = document.querySelectorAll('.feature-card, .pricing-card, .testimonial-card, .cocktail-card');
+    function animateCards() {
+      const triggerBottom = window.innerHeight * 0.85;
+      cards.forEach(card => {
+        const cardTop = card.getBoundingClientRect().top;
+        if(cardTop < triggerBottom) card.classList.add('visible');
+      });
+    }
+    window.addEventListener('scroll', animateCards);
+    window.addEventListener('load', () => { animateCards(); animateSkills(); });
+  </script>
+
+</body>
+</html>
